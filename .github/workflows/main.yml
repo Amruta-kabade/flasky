@@ -1,14 +1,12 @@
-name: my first action
-on: [ push ]
-
+name: Set up and Display Python's version 
+on: [push]
 jobs:
-  my-first-action:
-    check-python-version
+  check-pythons-version:
     runs-on: ubuntu-latest
     steps:
-      - users: actions/checkout@v2
+      - uses: actions/checkout@v2
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 
-      - run: python --version
+          python-version: 3.7
+      - run: python --version 
