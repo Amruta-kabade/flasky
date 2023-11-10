@@ -3,6 +3,12 @@ on: [ push ]
 
 jobs:
   my-first-action:
+    check-python-version
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Github action works"
+      - users: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 
+      - run: python --version
